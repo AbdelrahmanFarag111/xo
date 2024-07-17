@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tic_tac/views/game_screen.dart';
 
+import '../models/player_model.dart';
 
 class LoginViewModel extends ChangeNotifier {
   final TextEditingController playerOne = TextEditingController();
@@ -13,6 +15,9 @@ class LoginViewModel extends ChangeNotifier {
   }
 
   void navigateToGameScreen(BuildContext context) {
-
+    PlayerModel playerModel =
+        PlayerModel(playerOne.text, switchValue, playerTwo.text);
+    Navigator.pushReplacementNamed(context, GameScreen.routeName,
+        arguments: playerModel);
   }
 }
