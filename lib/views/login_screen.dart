@@ -17,6 +17,19 @@ class LoginScreen extends StatelessWidget {
       child: Consumer<LoginViewModel>(
         builder: (context, loginViewModel, _) {
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: AppConstants.bgColor,
+              leading: IconButton(
+                onPressed: () {
+
+                },
+                icon: const Icon(
+                  Icons.list,
+                  color: Colors.white,
+                  size: 40,
+                ),
+              ),
+            ),
             backgroundColor: AppConstants.bgColor,
             body: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -104,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                           style: AppConstants.customFontWhite
                               .copyWith(color: AppConstants.bgColor),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

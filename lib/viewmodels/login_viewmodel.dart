@@ -17,7 +17,7 @@ class LoginViewModel extends ChangeNotifier {
   void navigateToGameScreen(BuildContext context) {
     PlayerModel playerModel =
         PlayerModel(playerOne.text, switchValue, playerTwo.text);
-    Navigator.pushReplacementNamed(context, GameScreen.routeName,
+    Navigator.pushNamed(context, GameScreen.routeName,
         arguments: playerModel);
   }
 }

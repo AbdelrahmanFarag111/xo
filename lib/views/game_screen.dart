@@ -7,6 +7,7 @@ import '../viewmodels/game_viewmodel.dart';
 
 class GameScreen extends StatelessWidget {
   static const String routeName = 'GameScreen';
+
   const GameScreen({
     super.key,
   });
@@ -19,6 +20,9 @@ class GameScreen extends StatelessWidget {
       child: Consumer<GameViewModel>(
         builder: (context, gameViewModel, _) {
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: AppConstants.bgColor,
+            ),
             backgroundColor: AppConstants.bgColor,
             body: Padding(
               padding: const EdgeInsets.all(20),
@@ -88,7 +92,8 @@ class GameScreen extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   gameViewModel.bordState[index],
-                                  style: AppConstants.customFontWhite.copyWith(fontSize: 64),
+                                  style: AppConstants.customFontWhite
+                                      .copyWith(fontSize: 64),
                                 ),
                               ),
                             ),
