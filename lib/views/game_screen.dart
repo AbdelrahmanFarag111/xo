@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../models/player_model.dart';
@@ -22,10 +23,24 @@ class GameScreen extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               backgroundColor: AppConstants.bgColor,
+              leading: Padding(
+
+                padding: const EdgeInsets.all(8.0),
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.arrow_back_rounded,
+                    color: Colors.white,
+                    size: 30.sp,
+                  ),
+                ),
+              ),
             ),
             backgroundColor: AppConstants.bgColor,
             body: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20.sp),
               child: Column(
                 children: [
                   Expanded(
@@ -46,7 +61,7 @@ class GameScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(width: 20),
+                        SizedBox(width: 20.w),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -80,9 +95,9 @@ class GameScreen extends StatelessWidget {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
+                                borderRadius: BorderRadius.circular(15.sp),
                                 border: Border.all(
-                                  width: 5,
+                                  width: 5.w,
                                   color: const Color(0xff271767),
                                 ),
                                 color: gameViewModel.winIndexes.contains(index)
@@ -93,7 +108,7 @@ class GameScreen extends StatelessWidget {
                                 child: Text(
                                   gameViewModel.bordState[index],
                                   style: AppConstants.customFontWhite
-                                      .copyWith(fontSize: 64),
+                                      .copyWith(fontSize: 64.sp),
                                 ),
                               ),
                             ),
@@ -108,17 +123,17 @@ class GameScreen extends StatelessWidget {
                         children: [
                           Text(gameViewModel.resultDeclaration,
                               style: AppConstants.customFontWhite),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10.h),
                           Visibility(
                             visible: !gameViewModel.isOn,
                             child: IconButton(
                               onPressed: () {
                                 gameViewModel.clearBoard();
                               },
-                              icon: const Icon(
+                              icon: Icon(
                                 Icons.restart_alt,
                                 color: Colors.white,
-                                size: 35,
+                                size: 35.sp,
                               ),
                             ),
                           )

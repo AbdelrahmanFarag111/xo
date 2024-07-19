@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tic_tac/main.dart';
 
 import '../utils/constants.dart';
 import '../viewmodels/login_viewmodel.dart';
@@ -23,16 +25,16 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
 
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.list,
                   color: Colors.white,
-                  size: 40,
+                  size: 40.sp,
                 ),
               ),
             ),
             backgroundColor: AppConstants.bgColor,
             body: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.sp),
               child: Center(
                 child: SingleChildScrollView(
                   child: Column(
@@ -43,21 +45,21 @@ class LoginScreen extends StatelessWidget {
                         style: const TextStyle(color: Colors.white),
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16.sp),
                                 borderSide: const BorderSide(
                                   color: Colors.white,
                                 )),
                             focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16.sp),
                                 borderSide: const BorderSide(
                                   color: Colors.white,
                                 )),
                             labelText: 'Name For Player (X)',
                             labelStyle: AppConstants.customFontWhite
-                                .copyWith(fontSize: 14)),
+                                .copyWith(fontSize: 14.sp)),
                       ),
-                      const SizedBox(
-                        height: 15,
+                      SizedBox(
+                        height: 15.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -75,8 +77,8 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 15,
+                      SizedBox(
+                        height: 15.h,
                       ),
                       Visibility(
                         visible: !loginViewModel.switchValue,
@@ -85,11 +87,11 @@ class LoginScreen extends StatelessWidget {
                           style: const TextStyle(color: Colors.white),
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16.sp),
                                 borderSide:
                                     const BorderSide(color: Colors.white)),
                             focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(16.sp),
                                 borderSide: const BorderSide(
                                   color: Colors.white,
                                 )),
@@ -99,16 +101,16 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 20.h,
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16)),
+                                borderRadius: BorderRadius.circular(16.sp)),
                             backgroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8)),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 16.w, vertical: 8.h)),
                         onPressed: () {
                           loginViewModel.navigateToGameScreen(context);
                         },
